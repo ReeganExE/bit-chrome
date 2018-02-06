@@ -1,0 +1,26 @@
+{
+  "name": "bit-chrome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --color --progress --env=prod",
+    "dev": "webpack --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ms": "^2.1.1",
+    "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.3.1",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1",
+    "uglifyjs-webpack-plugin": "^1.1.8"
+  }
+}
