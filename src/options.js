@@ -9,3 +9,9 @@ document.getElementById('interval').addEventListener('change', e => {
     }, 750);
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  chrome.storage.sync.get('interval', ({ interval }) => {
+    document.getElementById('interval').value = interval;
+  });
+});

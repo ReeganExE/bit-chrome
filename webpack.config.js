@@ -3,6 +3,8 @@ const path = require('path');
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
+const PROD = process.env.NODE_ENV === 'production';
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -14,16 +16,15 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
-    copy('src/manifest.json', 'src/icon.png', 'src/options.html', 'src/options.js'),
-    new UglifyJSPlugin({
-      uglifyOptions: {
-        beautify: false,
-        ecma: 6,
-        compress: true,
-        comments: false
-      }
-    })
-  ]
+    copy('src/manifest.json', 'src/icon.png', 'src/options.html', 'src/options.js')
+  ].concat(PROD ? new UglifyJSPlugin({
+    uglifyOptions: {
+      beautify: false,
+      ecma: 6,
+      compress: true,
+      comments: false
+    }
+  }) : [])
 };
 
 function copy(...args) {
