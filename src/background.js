@@ -7,8 +7,10 @@ async function refresh() {
   chrome.browserAction.setTitle({ title: bit.price_usd });
 }
 
+let timer;
+
 chrome.storage.sync.get('interval', ({ interval = '5m' }) => {
-  let timer = setInterval(refresh, ms(interval));
+  timer = setInterval(refresh, ms(interval));
   refresh();
 });
 
@@ -16,3 +18,5 @@ chrome.storage.onChanged.addListener(({ interval }) => {
   clearInterval(timer);
   timer = setInterval(refresh, ms(interval.newValue) || 5000);
 });
+
+chrome.browserAction.onClicked.addListener(() => window.open('https://coinmarketcap.com/'));
