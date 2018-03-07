@@ -11,7 +11,7 @@ document.getElementById('interval').addEventListener('change', e => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  chrome.storage.sync.get('interval', ({ interval }) => {
+  chrome.storage.sync.get('interval', ({ interval = '5m' }) => {
     document.getElementById('interval').value = interval;
   });
 });
