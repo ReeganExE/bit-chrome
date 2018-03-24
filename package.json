@@ -1,14 +1,14 @@
 {
   "name": "bit-chrome",
   "version": "1.0.0",
-  "description": "",
+  "description": "https://github.com/ReeganExE/bitchrome",
   "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --color --progress --env=prod",
     "dev": "cross-env NODE_ENV=development webpack --watch"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["bitchrome"],
+  "author": "ReeganExE (Ninh Pham)",
   "license": "ISC",
   "dependencies": {
     "ms": "^2.1.1"
