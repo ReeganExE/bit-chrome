@@ -10,6 +10,14 @@
 
 </center>
 
-##
+# Development
 
-[https://ninh.js.org](https://ninh.js.org)
+
+```bash
+npm install
+npm run dev
+```
+
+Got to `chrome://extensions/` then click *LOAD UNPACKED*, browse to the `dist` directory at the workspace root.
+
+![image](https://user-images.githubusercontent.com/7277418/39083450-19d2b2d0-458e-11e8-84ff-4bbce6e0f983.png)
