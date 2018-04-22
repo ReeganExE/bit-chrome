@@ -1,4 +1,4 @@
-# Bit Chrome - Show Bitcoin price on you Chrome
+# Bit Chrome - Show Bitcoin price (and the other coins) on you Chrome
 
 <center>
 
@@ -6,7 +6,8 @@
 
 ![Bit Chrome](https://user-images.githubusercontent.com/7277418/37862971-b783d7c8-2f88-11e8-9363-542ec062cb4d.png)
 
-![Bitchrome option](https://user-images.githubusercontent.com/7277418/37862974-bc72b5ec-2f88-11e8-9242-92f8df364f89.png)
+![Bit Chrome Options](https://user-images.githubusercontent.com/7277418/39094680-d2333ec4-465d-11e8-8b01-bef4b20c36ef.png)
+![Bit Chrome Options](https://user-images.githubusercontent.com/7277418/39094683-d9b09d68-465d-11e8-820e-ab3cfd48cb79.png)
 
 </center>
 
