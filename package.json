@@ -1,6 +1,6 @@
 {
   "name": "bit-chrome",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "https://github.com/ReeganExE/bitchrome",
   "main": "index.js",
   "scripts": {
@@ -12,16 +12,51 @@
   ],
   "author": "ReeganExE (Ninh Pham)",
   "license": "ISC",
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "chrome": 60
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
   "dependencies": {
-    "ms": "^2.1.1"
+    "ms": "^2.1.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "@babel/preset-react": "^7.0.0-beta.44",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^8.0.0-beta.2",
     "copy-webpack-plugin": "^4.5.1",
     "cross-env": "^5.1.3",
-    "eslint": "^4.18.2",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.9.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.2.0",
     "webpack-cli": "^2.0.13"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/ReeganExE/bit-chrome.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/ReeganExE/bit-chrome/issues"
+  },
+  "homepage": "https://gitlab.com/ReeganExE/bit-chrome#README"
 }
