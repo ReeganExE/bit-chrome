@@ -25,13 +25,15 @@ export default class Options extends React.Component {
   }
 
   render() {
+    const coinLoaded = this.state.cointList.length !== 0;
     return (
       <table>
         <tbody>
           <tr>
             <td>Coin:</td>
             <td>
-              <select value={this.state.coin} onChange={this.onCoinChange}>
+              <select value={this.state.coin} onChange={this.onCoinChange} disabled={!coinLoaded}>
+                { coinLoaded || <option>Loading...</option> }
                 { this.state.cointList.map(coin => (<option value={coin.id} key={coin.id}>{coin.name}</option>)) }
               </select>
             </td>
