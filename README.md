@@ -1,16 +1,16 @@
 # Bit Chrome - Show Bitcoin price (and the other coins) on you Chrome
 
-<center>
+<p align="center">
 
-![Chrome](https://user-images.githubusercontent.com/7277418/37862910-6e6f7c82-2f87-11e8-9cd8-c8991cce642d.png)
+  ![Chrome](https://user-images.githubusercontent.com/7277418/37862910-6e6f7c82-2f87-11e8-9cd8-c8991cce642d.png)
 
-![Bit Chrome](https://user-images.githubusercontent.com/7277418/37862971-b783d7c8-2f88-11e8-9363-542ec062cb4d.png)
+  ![Bit Chrome](https://user-images.githubusercontent.com/7277418/37862971-b783d7c8-2f88-11e8-9363-542ec062cb4d.png)
 
-<img src="https://user-images.githubusercontent.com/7277418/39094680-d2333ec4-465d-11e8-8b01-bef4b20c36ef.png" alt="Chrome Options" width="300" />
-<br />
-<img src="https://user-images.githubusercontent.com/7277418/39094683-d9b09d68-465d-11e8-820e-ab3cfd48cb79.png" alt="Chrome Options" width="300" />
+  <img src="https://user-images.githubusercontent.com/7277418/39192118-ae3ae8c2-4802-11e8-9fb1-9770df177df3.png" alt="Chrome Options" width="300" />
+  <br />
+  <img src="https://user-images.githubusercontent.com/7277418/39192130-b5bf6fbe-4802-11e8-81bd-b63d08700a61.png" alt="Chrome Options" width="300" />
 
-</center>
+</p>
 
 # Development
 
