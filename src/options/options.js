@@ -1,58 +1,59 @@
-import React from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 
-export default class Options extends React.Component {
-  state = { interval: '5m', cointList: [], coin: '' }
+export default function Options() {
+  const [interval, updateInterval] = useState('5m');
+  const [cointList, setCointList] = useState([]);
+  const [coin, setCoin] = useState('');
 
-  componentDidMount() {
+  useEffect(() => {
     chrome.storage.sync.get(['interval', 'coin'], ({ interval = '5m', coin }) => {
-      this.setState({ interval, coin });
+      updateInterval(interval);
+      setCoin(coin);
     });
 
     fetch('https://api.coinmarketcap.com/v1/ticker/')
       .then(r => r.json())
-      .then(cointList => this.setState({ cointList }));
-  }
+      .then(setCointList);
+  }, []);
 
-  onCoinChange = e => {
+  const onCoinChange = useCallback(e => {
     const coin = e.target.value;
-    chrome.storage.sync.set({ coin }, () => this.setState({ coin }));
-  }
+    chrome.storage.sync.set({ coin }, () => setCoin(coin));
+  }, []);
 
-  onIntervalChange = e => {
+  const onIntervalChange = useCallback(e => {
     const interval = e.target.value;
 
-    chrome.storage.sync.set({ interval }, () => this.setState({ interval }));
-  }
+    chrome.storage.sync.set({ interval }, () => updateInterval(interval));
+  }, []);
 
-  render() {
-    const coinLoaded = this.state.cointList.length !== 0;
-    return (
-      <table>
-        <tbody>
-          <tr>
-            <td>Coin:</td>
-            <td>
-              <select value={this.state.coin} onChange={this.onCoinChange} disabled={!coinLoaded}>
-                { coinLoaded || <option>Loading...</option> }
-                { this.state.cointList.map(coin => (<option value={coin.id} key={coin.id}>{coin.name}</option>)) }
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td>Interval:</td>
-            <td>
-              <select onChange={this.onIntervalChange} value={this.state.interval}>
-                <option value="1m">1m</option>
-                <option value="2m">2m</option>
-                <option value="3m">3m</option>
-                <option value="5m">5m</option>
-                <option value="7m">7m</option>
-                <option value="10m">10m</option>
-              </select>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    );
-  }
+  const coinLoaded = cointList.length !== 0;
+  return (
+    <table>
+      <tbody>
+        <tr>
+          <td>Coin:</td>
+          <td>
+            <select value={coin} onChange={onCoinChange} disabled={!coinLoaded}>
+              { coinLoaded || <option>Loading...</option> }
+              { cointList.map(coin => (<option value={coin.id} key={coin.id}>{coin.name}</option>)) }
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Interval:</td>
+          <td>
+            <select onChange={onIntervalChange} value={interval}>
+              <option value="1m">1m</option>
+              <option value="2m">2m</option>
+              <option value="3m">3m</option>
+              <option value="5m">5m</option>
+              <option value="7m">7m</option>
+              <option value="10m">10m</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  );
 }

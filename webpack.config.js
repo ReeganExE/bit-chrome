@@ -25,6 +25,7 @@ module.exports = {
     }),
     copy('src/manifest.json', 'src/icon.png', 'src/options/options.html')
   ],
+  devtool: process.env.NODE_ENV === 'development' ? 'cheap-module-eval-source-map' : undefined,
   optimization: optimization()
 };
 
